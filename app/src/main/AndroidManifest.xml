@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 🔐 Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- For Android 13+ notifications -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Only for Android 10 and below -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
+    <!-- Scoped storage override for Android 11+ -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+
+    <!-- Camera feature -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <application
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Production Display"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Productiondisplay"
+        tools:targetApi="31">
+
+        <!-- ✅ LoginActivity (Main launcher) -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER"
+                          android:theme="@style/Theme.Productiondisplay.NoActionBar"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ✅ MainActivity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="PRODUCTION DISPLAY"
+            android:theme="@style/Theme.Productiondisplay.NoActionBar" />
+
+        <!-- ✅ Additional feature screens -->
+        <activity
+            android:name=".ui.slideshow.Production.ProductionChatActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Productiondisplay.NoActionBar"/>
+
+        <activity
+            android:name=".ui.slideshow.Invoice.InvoiceChatActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Productiondisplay.NoActionBar"/>
+
+    </application>
+
+</manifest>

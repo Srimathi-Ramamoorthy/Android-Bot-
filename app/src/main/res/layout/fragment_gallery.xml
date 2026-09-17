@@ -1,0 +1,138 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:context=".MainActivity">
+
+    <!-- 🔹 HEADER -->
+
+    <!-- 🔽 Drag Handle -->
+    <LinearLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ADD8E6"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <!-- 🟦 Row 1: Logo + Title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <ImageView
+                android:id="@+id/mycrilogo"
+                android:layout_width="49dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="Logo"
+                android:src="@mipmap/ic_launcher"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/criTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="CRI DIGITAL MANUFACTURING\nSOLUTIONS"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    <!-- 🟧 Row 2: Buttons -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:padding="8dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/headerLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/btnFront"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#0D47A1"
+                android:text="PREVIOUS"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnRefresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#0D47A1"
+                android:text="REFRESH"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#0D47A1"
+                android:text="NEXT"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#0D47A1"
+                android:text="DUPLICATE"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnDeleteTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#0D47A1"
+                android:text="DELETE"
+                android:textColor="#FFFFFF" />
+
+            <Spinner
+                android:id="@+id/tabSelector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#0D47A1"
+                android:layout_marginEnd="8dp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/dragHandle"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_below="@id/headerContainer"
+        android:background="#0D47A1"
+        android:padding="8dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/drag"/>
+
+    <!-- 🔳 Content Area -->
+    <ViewFlipper
+        android:id="@+id/tabFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/dragHandle"
+        android:layout_marginTop="4dp"/>
+</RelativeLayout>
+
+

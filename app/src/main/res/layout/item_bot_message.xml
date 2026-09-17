@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textBot"
+        android:layout_width="wrap_content"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_bot_message"
+        android:padding="10dp"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/optionButtons"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
